@@ -22,7 +22,7 @@ Goal: This project was aimed at identifying which at-risk customers are worth ke
 
 Using each customer's first 60 days of activity, three models work together:
 
-- **Segmentation (KMeans + PCA)** - 4 personas: `High-Value Elite`, `Loyal Performers`, `One-Time Bulk-Buyers`, `One-Time Acquaintances`. The KMeans personas were validated against real behavior 100 days later, and the `High-Value Elite` registered the highest retention rate at 95%, while the `One-Time Acquaintance` segment presented highest churn rate, at 79%.
+- **Segmentation (KMeans + PCA)** - 4 personas: `High-Value Elite`, `Loyal Performers`, `One-Time Bulk-Buyers`, `One-Time Acquaintances`. The KMeans personas were validated against real behavior 100 days later, and the `High-Value Elite` registered the highest retention rate at 95%, while the `One-Time Acquaintance` segment presented the highest churn rate, at 79%.
 - **Churn model (Logistic Regression)** - predicts who goes quiet for 100+ days. The model delivered 82% recall, with a 74% accuracy out-of-sample.
 - **CLTV model (Random Forest)** - predicts next 100-day spend per customer. An average error of `$247` was registered.
 
@@ -38,10 +38,10 @@ The recommendation: re-engage these customers at a 1:10 risk-to-reward ratio, wi
 |---|----------|---------------|
 | 1.0 | Data Cleaning Pipeline | Cleans raw transactions from S3, outputs clean parquet |
 | 2.0 | Feature Engineering | Shared feature-extraction function used by segmentation, churn, CLTV |
-| 4.0 | Customer Segmentation | KMeans on PCA-reduced first-60-day behavior, 4 personas assigned |
-| 5.0 | Predicting Customer Churn | Logistic Regression, 100-day churn prediction, SHAP analysis |
-| 6.0 | Predicting CLTV | Random Forest, 100-day forward spend prediction |
-| 7.0 | Final Delivery: Inference Pipeline | Applies all 3 models to new data, outputs risk matrix + budget recommendation |
+| 3.0 | Customer Segmentation | KMeans on PCA-reduced first-60-day behavior, 4 personas assigned |
+| 4.0 | Predicting Customer Churn | Logistic Regression, 100-day churn prediction, SHAP analysis |
+| 5.0 | Predicting CLTV | Random Forest, 100-day forward spend prediction |
+| 6.0 | Final Delivery: Inference Pipeline | Applies all 3 models to new data, outputs risk matrix + budget recommendation |
 
 The Results of the Final Delivery notebook are written to PostgreSQL (Neon) for querying and business intelligence access.
 
