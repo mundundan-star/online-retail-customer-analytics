@@ -56,12 +56,11 @@ Python · pandas / NumPy · scikit-learn · SHAP · AWS S3 · Parquet · Postgre
 
 ## Structure
 
-```
 online-retail-customer-analytics/
-├── 1.0 Data Cleaning Pipeline.ipynb
-├── 2.0 Feature_Engineering.ipynb
-├── 4.0 Customer Segmentation.ipynb
-├── 5.0 Predicting Customer Churn.ipynb
-├── 6.0 Predicting_Customer_Life_Time_Value_(CLTV).ipynb
-└── 7.0 Final_Delivery: Churn and CLTV Inference Pipeline.ipynb
-```
+- 1.0 Data Cleaning Pipeline.ipynb
+- 2.0 Feature_Engineering.ipynb
+- 3.0 Customer Segmentation.ipynb
+- 4.0 Predicting Customer Churn.ipynb
+- 5.0 Predicting Customer Life Time Value (CLTV).ipynb
+- 6.0 Final_Delivery: Churn and CLTV Inference Pipeline.ipynb
+
