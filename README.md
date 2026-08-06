@@ -43,15 +43,7 @@ The recommendation: re-engage these customers at a 1:10 risk-to-reward ratio, wi
 | 6.0 | Predicting CLTV | Random Forest, 100-day forward spend prediction |
 | 7.0 | Final Delivery: Inference Pipeline | Applies all 3 models to new data, outputs risk matrix + budget recommendation |
 
-## How It All Fits Together
-
-The raw Excel file is stored in AWS S3 and streamed into the Data Cleaning Pipeline, where bad records are flagged and removed and a revenue column is added. The clean dataset is written back to S3 as a parquet file.
-
-The Feature Engineering notebook then computes all customer-level features from the clean data and stores the extraction function in S3, where every notebook calls it directly, so tgat the segmentation, churn, and CLTV all work from the same feature definitions.
-
-The three modeling notebooks run independently from there: Segmentation assigns each customer a persona, Churn predicts who goes quiet, and CLTV predicts forward spend. Each trained model is saved as a joblib file back to S3.
-
-The Final Delivery notebook pulls all three models from S3, runs them on new unseen customer data, and combines the outputs into a risk matrix and a dollar-figure re-engagement budget. Results are written to PostgreSQL (Neon) for querying and business intelligence access.
+The Results of the Final Delivery notebook are written to PostgreSQL (Neon) for querying and business intelligence access.
 
 ## Storage
 
