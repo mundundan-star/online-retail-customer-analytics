@@ -18,13 +18,13 @@ The raw dataset had no churn label, no customer segments, and no CLTV target —
 
 ## Executive Summary
 
-Goal: This project was aimed at identifying which at-risk customers are worth keeping or winning back, and how much to spend retain or re-acquire them.
+Goal: This project was aimed at identifying which at-risk customers are worth keeping or winning back, and how much to spend to retain or re-acquire them.
 
 Using each customer's first 60 days of activity, three models work together:
 
-- **Segmentation (KMeans + PCA)** — 4 personas: `High-Value Elite`, `Loyal Performers`, `One-Time Bulk-Buyers`, `One-Time Acquaintances`. The KMeans personas were validated against real behavior 100 days later, and the `High-Value Elite` registered the highest retention rate at 95%, while the `One-Time Acquaintances` was flagged as the segment with highest risk with churn rate of 79%.
-- **Churn model (Logistic Regression)** — predicts who goes quiet for 100+ days. The model delivered 82% recall, with a 74% accuracy out-of-sample.
-- **CLTV model (Random Forest)** — predicts next 100-day spend per customer. An average error  of ~$247 was registered.
+- **Segmentation (KMeans + PCA)** - 4 personas: `High-Value Elite`, `Loyal Performers`, `One-Time Bulk-Buyers`, `One-Time Acquaintances`. The KMeans personas were validated against real behavior 100 days later, and the `High-Value Elite` registered the highest retention rate at 95%, while the `One-Time Acquaintance` segment presented highest churn rate, at 79%.
+- **Churn model (Logistic Regression)** - predicts who goes quiet for 100+ days. The model delivered 82% recall, with a 74% accuracy out-of-sample.
+- **CLTV model (Random Forest)** - predicts next 100-day spend per customer. An average error  of ~$247 was registered.
 
 Churn risk + predicted CLTV combine into a 2×2 risk matrix. Out of the 430 customers, 100 customers were identified as the priority re-acquisition target, which are the `Low Churn - High CLTV` profile, made up of One-Time Acquaintances and One-Time Bulk-Buyers who are predicted to spend above $400 in the next 100 days but are still at risk of not returning.
 
